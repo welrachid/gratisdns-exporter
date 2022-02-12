@@ -12,9 +12,11 @@ Denne udbyder har vi ikke fundet og derfor udviklet vores egen OctoDNS-lign. ser
 
 Vi har pænt mange domæner og har været glade for deres templating.
 
-
 # Configuration
 Rediger filen login.sh og udskift XXXXXXX med username og YYYYYYY med password
+
+# Environment / requirements
+Script er kun kørt på en debian maskine og kræver at både curl og php er installeret.
 
 # How it works
 ## run.sh:
