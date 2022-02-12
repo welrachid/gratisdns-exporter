@@ -23,7 +23,7 @@ Script er kun kørt på en debian maskine og kræver at både curl og php er ins
 kørsel af komplet script
 
 ### login.sh:
-Script starter med at skabe en session vha curl. Tak til https://github.com/zylopfa/acme.sh_dns_gratisdns/blob/master/dns_gratisdns.sh for hints. 'cookiefile' sættes.
+Script starter med at skabe en session vha curl. Tak til https://github.com/zylopfa/acme.sh_dns_gratisdns/blob/master/dns_gratisdns.sh for hints. 'cookiefile' sættes. (Har ikke talt med vedkommende blot kigget kode)
 
 ### domain_list.sh:
 Script downloader en html side fra GDNS som viser listen over alle domæner og templates. Herunder selvstændige domæner. Laver en midlertidig fil 'gratisdns.html'. benytter 'cookiefile'
