@@ -30,7 +30,7 @@ Script downloader en html side fra GDNS som viser listen over alle domæner og t
 
 ### php extract_links.php:
 Tager 'gratisdns.html' ind og finder alle links, hvor "knappen" hedder "eksport", går baglæns i Nodes indtil den rammer tr og henter navnet på domænet/templaten.
-Hvis der står (template) i navnet antager vi det er en template (hvis jeres navngivning indeholder template må du selv lige tilpasse script.)
+Hvis der står (template) i navnet antager vi det er en template (hvis jeres navngivning indeholder template må du selv lige tilpasse script. Kig evt. om link slutter med en .gdnstmpl eller .template)
 
 Hvis ikke der står template, kigger vi på hvorvidt domænetnavnet starter med /[a-zA-Z0-9]/ og ellers antager vi det er "under seneste template". Alle domæner der ligger under templates starter med "-".
 
