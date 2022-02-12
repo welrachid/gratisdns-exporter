@@ -17,21 +17,24 @@ Vi har pænt mange domæner og har været glade for deres templating.
 Rediger filen login.sh og udskift XXXXXXX med username og YYYYYYY med password
 
 # How it works
-run.sh:
+## run.sh:
 kørsel af komplet script
 
-login.sh:
+### login.sh:
 Script starter med at skabe en session vha curl. Tak til https://github.com/zylopfa/acme.sh_dns_gratisdns/blob/master/dns_gratisdns.sh for hints. 'cookiefile' sættes.
 
-domain_list.sh:
+### domain_list.sh:
 Script downloader en html side fra GDNS som viser listen over alle domæner og templates. Herunder selvstændige domæner. Laver en midlertidig fil 'gratisdns.html'. benytter 'cookiefile'
 
-php extract_links.php:
+### php extract_links.php:
 Tager 'gratisdns.html' ind og finder alle links, hvor "knappen" hedder "eksport", går baglæns i Nodes indtil den rammer tr og henter navnet på domænet/templaten.
 Hvis der står (template) i navnet antager vi det er en template (hvis jeres navngivning indeholder template må du selv lige tilpasse script.)
+
 Hvis ikke der står template, kigger vi på hvorvidt domænetnavnet starter med /[a-zA-Z0-9]/ og ellers antager vi det er "under seneste template". Alle domæner der ligger under templates starter med "-".
+
 Til sidst skaber vi et download script som benytter vores 'cookiefile' og curl til at downloade og placere filerne i en export_from_gdns mappe.
 Strukturen i mappen er som følger
+````
 export_from_gdns/templatenavnUdenMellemRumEllerSpecialtegn/0 #første domæne
 export_from_gdns/templatenavnUdenMellemRumEllerSpecialtegn/1 #andet domæne
 export_from_gdns/templatenavnUdenMellemRumEllerSpecialtegn/2 #tredje domæne
@@ -39,10 +42,12 @@ export_from_gdns/endnuEnTemplatenavnUdenMellemRumEllerSpecialtegn/0 #første dom
 export_from_gdns/endnuEnTemplatenavnUdenMellemRumEllerSpecialtegn/1 #andet domæne
 export_from_gdns/endnuEnTemplatenavnUdenMellemRumEllerSpecialtegn/2 #tredje domæne
 export_from_gdns/domæne.dk/domæne.dk
+````
+### download.sh:
+Filen eksisterer midlertidigt og er dannet af extract_links.php for at foretage download af de enkelte zoner.
 
-download.sh: Filen eksisterer midlertidigt og er dannet af extract_links.php for at foretage download af de enkelte zoner.
-
-run.sh: cleanup. Fjerner download.sh, cookiefile,gratisdns.html
+## tilbage til run.sh:
+cleanup. Fjerner download.sh, cookiefile,gratisdns.html
 
 # Quirks
 Nogle domæner har "forkerte" zonefiler. Disse zonefiler virker som om at de ikke bliver indlæst. Jeg har kun oplevet disse på enkelte domæner. I mit script ser jeg blot om der er en "$" i zone-filen hvorefter jeg antager den er broken og skal indlæses manuelt fra deres side.
