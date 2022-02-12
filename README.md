@@ -55,6 +55,6 @@ Filen eksisterer midlertidigt og er dannet af extract_links.php for at foretage 
 cleanup. Fjerner download.sh, cookiefile,gratisdns.html
 
 # Quirks
-Nogle domæner har "forkerte" zonefiler. Disse zonefiler virker som om at de ikke bliver indlæst. Jeg har kun oplevet disse på enkelte domæner. I mit script ser jeg blot om der er en "$" i zone-filen hvorefter jeg antager den er broken og skal indlæses manuelt fra deres side.
+Nogle domæner har "forkerte" zonefiler. Disse zonefiler virker som om at de ikke er blevet indlæst af GDNS. Der er i hvertfald $ i dem. Don't know why. Jeg har kun oplevet disse på enkelte domæner. I mit importscript (ikke dette projekt) ser jeg blot om der er en "$" i zone-filen hvorefter jeg antager den er broken og skal indlæses manuelt fra deres side.
 
-Min bash kundskaber er ikke de store. Derfor må du nøjes med at ændre direkte i login.sh filen. mappenavnene på templates er lavet så jeg ikke skal tænke over om filsystem understøtter
+Mine bash kundskaber er ikke de store. Derfor må du nøjes med at ændre direkte i login.sh filen. Mappenavnene på templates er lavet så jeg ikke skal tænke over om filsystem understøtter
