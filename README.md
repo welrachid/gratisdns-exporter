@@ -55,6 +55,13 @@ Filen eksisterer midlertidigt og er dannet af extract_links.php for at foretage 
 cleanup. Fjerner download.sh, cookiefile,gratisdns.html
 
 # Quirks
+
+## invalide zonefiler
 Nogle domæner har "forkerte" zonefiler. Disse zonefiler virker som om at de ikke er blevet indlæst af GDNS. Der er i hvertfald $ i dem. Don't know why. Jeg har kun oplevet disse på enkelte domæner. I mit importscript (ikke dette projekt) ser jeg blot om der er en "$" i zone-filen hvorefter jeg antager den er broken og skal indlæses manuelt fra deres side.
 
+## html i zonefiler
+Indeholder <br> og kun \r - og derfor skal du være opmærksom når du laver dit importscript at der lige skal weedes ud i filerne inden du kan foretage imports.
+domænet zonen dækker over står nederst i zonefilen.
+
+## bash scripts og mig.
 Mine bash kundskaber er ikke de store. Derfor må du nøjes med at ændre direkte i login.sh filen. Mappenavnene på templates er lavet så jeg ikke skal tænke over om filsystem understøtter
