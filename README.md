@@ -45,6 +45,9 @@ export_from_gdns/endnuEnTemplatenavnUdenMellemRumEllerSpecialtegn/1 #andet domæ
 export_from_gdns/endnuEnTemplatenavnUdenMellemRumEllerSpecialtegn/2 #tredje domæne
 export_from_gdns/domæne.dk/domæne.dk
 ````
+Vær opmærksom på at scriptet starter med at forsøge at slette en template-mappe som hedder det samme. Det skyldes at jeg jo var nødt til at have flere "runs" ;)
+
+
 ### download.sh:
 Filen eksisterer midlertidigt og er dannet af extract_links.php for at foretage download af de enkelte zoner.
 
