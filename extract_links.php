@@ -42,7 +42,7 @@ if(!file_exists('export_from_gdns')) mkdir("export_from_gdns");
 
 $write_to_file = "";
 foreach($templates as $index => $template){
-    $directory_name = preg_replace('/[^A-Za-z0-9\-\_\.]/', '', $template['name']);
+    $directory_name = preg_replace('/[^A-Za-z0-9\-\_\.]/', '-', $template['name']);
     $write_to_file .= "rm -R export_from_gdns/".$directory_name."\n";
     $write_to_file .= "mkdir export_from_gdns/".$directory_name."\n";
     foreach($template['domains'] as $domain_index => $domain_export_uri){
@@ -51,7 +51,7 @@ foreach($templates as $index => $template){
     }
 }
 foreach($domains as $domain_name => $domain_export_uri){
-    $directory_name = preg_replace('/[^A-Za-z0-9\-\_\.]/', '', $domain_name);
+    $directory_name = preg_replace('/[^A-Za-z0-9\-\_\.]/', '-', $domain_name);
     $write_to_file .= "rm -R export_from_gdns/".$directory_name."\n";
     $write_to_file .= "mkdir export_from_gdns/".$directory_name."\n";
     $write_to_file .= "curl -b 'cookiefile' '".$domain_export_uri."' -o 'export_from_gdns/".$directory_name."/".$directory_name."' \n";
